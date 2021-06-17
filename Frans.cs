@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Frans : MonoBehaviour, ICreature
 {
-    public string Name;
-    public string Type;
-    public float Health;
-    public float Physical;
-    public float PhysDef;
-    public float Ranged;
-    public float RanDef;
-    public float Speed;
-    public float Movement;
+    public string Name = "Frans";
+    public string Type = "Dark";
+    public float Health = 115f;
+    public float Physical = 75f;
+    public float PhysDef = 40f;
+    public float Ranged = 25f;
+    public float RanDef = 30f;
+    public float Speed = 30f;
+    public float Movement = 6f;
 
     string ICreature.CreatureName
     {
