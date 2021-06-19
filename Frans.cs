@@ -5,68 +5,68 @@ using UnityEngine;
 
 public class Frans : MonoBehaviour, ICreature
 {
-    public string Name = "Frans";
-    public string Type = "Dark";
-    public float Health = 115f;
-    public float Physical = 75f;
-    public float PhysDef = 40f;
-    public float Ranged = 25f;
-    public float RanDef = 30f;
-    public float Speed = 30f;
-    public float Movement = 6f;
+    private string name = "Frans";
+    private string type = "Dark";
+    private float health = 115f;
+    private float physical = 75f;
+    private float physDef = 40f;
+    private float ranged = 25f;
+    private float ranDef = 30f;
+    private float speed = 30f;
+    private float movement = 6f;
 
-    string ICreature.CreatureName
+    public string Name
     {
-        get { return Name; }
-        set { Name = value; }
+        get { return name; }
+        set { name = value; }
     }
 
-    string ICreature.CreatureType
+    public string Type
     {
-        get { return Type; }
-        set { Type = value; }
+        get { return type; }
+        set { type = value; }
     }
 
-    float ICreature.CreatureHealth
+    public float Health
     {
-        get { return Health; }
-        set { Health = value; }
+        get { return health; }
+        set { health = value; }
     }
 
-    float ICreature.CreaturePhysical
+    public float Physical
     {
-        get { return Physical; }
-        set { Physical = value; }
+        get { return physical; }
+        set { physical = value; }
     }
 
-    float ICreature.CreaturePhysDef
+    public float PhysDef
     {
-        get { return PhysDef; }
-        set { PhysDef = value; }
+        get { return physDef; }
+        set { physDef = value; }
     }
 
-    float ICreature.CreatureRanged
+    public float Ranged
     {
-        get { return Ranged; }
-        set { Ranged = value; }
+        get { return ranged; }
+        set { ranged = value; }
     }
 
-    float ICreature.CreatureRanDef
+    public float RanDef
     {
-        get { return RanDef; }
-        set { RanDef = value; }
+        get { return ranDef; }
+        set { ranDef = value; }
     }
 
-    float ICreature.CreatureSpeed
+    public float Speed
     {
-        get { return Speed; }
-        set { Speed = value; }
+        get { return speed; }
+        set { speed = value; }
     }
 
-    float ICreature.CreatureMovement
+    public float Movement
     {
-        get { return Movement; }
-        set { Movement = value; }
+        get { return movement; }
+        set { movement = value; }
     }
 
 }
