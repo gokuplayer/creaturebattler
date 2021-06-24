@@ -8,14 +8,23 @@ namespace creaturebattler
 {
     public class Creature : MonoBehaviour
     {
+        [SerializeField]
         private string name;
+        [SerializeField]
         private string type;
+        [SerializeField]
         private float health;
+        [SerializeField]
         private float physical;
+        [SerializeField]
         private float physDef;
+        [SerializeField]
         private float ranged;
+        [SerializeField]
         private float ranDef;
+        [SerializeField]
         private float speed;
+        [SerializeField]
         private float movement;
 
         public Creature(string name, string type, float health, float physical, float physDef, float ranged, float ranDef, float speed, float movement)
