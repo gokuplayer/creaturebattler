@@ -97,7 +97,7 @@ MonoBehaviour:
   AttackObject: {fileID: 6180339016430598129, guid: 9f796261b99d94244b063f268a7a1536,
     type: 3}
   MoveButtons: {fileID: 0}
-  attackerName: 
+  attackerName: Quake
 --- !u!1 &8080251077374471376
 GameObject:
   m_ObjectHideFlags: 0
