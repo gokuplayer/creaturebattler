@@ -11,10 +11,13 @@ public class GameControllerScript : MonoBehaviour
 
     public GameObject[] Creatures, MoveArray;
 
-    public static GameObject MoveListButton, Player1MovesObject, Player2MovesObject,FransMovesButton, QuakeMovesButton, ReplayButton, FightButton, 
+    public List<string> FransMoves, QuakeMoves;
+
+    public static GameObject MoveListButton, Player1MovesObject, Player2MovesObject, ReplayButton, FightButton, 
         ChooseMovesButton, ChooseMovesNextButton, Move1ChoiceDropdown, PlayerTextObject, PlayerChoiceTextObject, WinnerTextObject, 
         Player1HealthTextObject, Player2HealthTextObject;
     public static Text PlayerText, PlayerCreatureChoiceText, WinnerText, Player1HealthText, Player2HealthText;
+    public static Dropdown Move1DD;
     public static int playerTurn;
     public static float player1maxHealth, player2maxHealth;
 
@@ -28,8 +31,6 @@ public class GameControllerScript : MonoBehaviour
         MoveListButton = GameObject.Find("MoveListButton");
         Player1MovesObject = GameObject.Find("Player1Moves");
         Player2MovesObject = GameObject.Find("Player2Moves");
-        FransMovesButton = GameObject.Find("FransMoves");
-        QuakeMovesButton = GameObject.Find("QuakeMoves");
         ReplayButton = GameObject.Find("ReplayButton");
         CreatureAttackerButton = GameObject.Find("Creature List");
         FightButton = GameObject.Find("FightButton");
@@ -46,12 +47,11 @@ public class GameControllerScript : MonoBehaviour
         WinnerText = WinnerTextObject.GetComponent<Text>();
         Player1HealthText = Player1HealthTextObject.GetComponent<Text>();
         Player2HealthText = Player2HealthTextObject.GetComponent<Text>();
+        Move1DD = Move1ChoiceDropdown.GetComponent<Dropdown>();
 
         PlayButton.SetActive(true);
         Player1MovesObject.SetActive(false);
         Player2MovesObject.SetActive(false);
-        FransMovesButton.SetActive(false);
-        QuakeMovesButton.SetActive(false);
         MoveListButton.SetActive(false);
         ReplayButton.SetActive(false);
         CreatureAttackerButton.SetActive(false);
@@ -65,6 +65,8 @@ public class GameControllerScript : MonoBehaviour
         WinnerText.text = "";
         Player1HealthText.text = "";
         Player2HealthText.text = "";
+
+        Move1DD.options.Clear();
 
     }
 
@@ -142,10 +144,10 @@ public class GameControllerScript : MonoBehaviour
         {
 
             player2CreatureChoice = creature;
-            playerTurn = 1;
             CreatureAttackerButton.SetActive(false);
             ChooseMovesButton.SetActive(true);
             PlayerCreatureChoiceText.text = "";
+            playerTurn = 1;
 
         }
 
@@ -154,24 +156,29 @@ public class GameControllerScript : MonoBehaviour
     public void MoveDropdownChoice(int choice)
     {
 
-        ChooseMovesNextButton.SetActive(true);
-
-        if (playerTurn == 1)
+        if (playerTurn == 2)
         {
 
-            playerTurn = 2;
+            ChooseMovesNextButton.SetActive(true);
+            Debug.Log(choice);
 
             switch (choice)
             {
 
+                case 0:
+                    move1 = 0;
+                    break;
                 case 1:
                     move1 = 1;
                     break;
-                case 6:
+                case 2:
                     move1 = 2;
                     break;
-                case 7:
-                    move1 = 0;
+                case 3:
+                    move1 = 3;
+                    break;
+                case 4:
+                    move1 = 4;
                     break;
                 default:
                     Debug.Log("Move choice error");
@@ -180,16 +187,28 @@ public class GameControllerScript : MonoBehaviour
             }
 
         }
-        else if (playerTurn == 2)
+        else if (playerTurn == 1)
         {
 
-            playerTurn = 1;
+            ChooseMovesNextButton.SetActive(false);
 
             switch (choice)
             {
 
+                case 0:
+                    move5 = 0;
+                    break;
                 case 1:
                     move5 = 1;
+                    break;
+                case 2:
+                    move5 = 2;
+                    break;
+                case 3:
+                    move5 = 3;
+                    break;
+                case 4:
+                    move5 = 4;
                     break;
                 default:
                     Debug.Log("Move choice error");
@@ -210,11 +229,27 @@ public class GameControllerScript : MonoBehaviour
             ChooseMovesButton.SetActive(false);
             PlayerCreatureChoiceText.text = "Player 1, choose your moves";
             Move1ChoiceDropdown.SetActive(true);
+            playerTurn = 2;
 
             switch (player1CreatureChoice)
             {
-                
 
+                case 10:
+                    foreach (string option in FransMoves)
+                    {
+
+                        Move1DD.options.Add(new Dropdown.OptionData(option));
+
+                    }
+                    break;
+                case 21:
+                    foreach (string option in QuakeMoves)
+                    {
+
+                        Move1DD.options.Add(new Dropdown.OptionData(option));
+
+                    }
+                    break;
                 default:
                     Debug.Log("Creature choice error.");
                     break;
@@ -227,12 +262,13 @@ public class GameControllerScript : MonoBehaviour
 
             ChooseMovesNextButton.SetActive(false);
             FightButton.SetActive(true);
-            playerTurn = 1;
             PlayerCreatureChoiceText.text = "Player 2, choose your moves";
+            playerTurn = 1;
 
             switch (player2CreatureChoice)
             {
-
+                case 10:
+                    break;
                 default:
                     Debug.Log("Creature choice error.");
                     break;
