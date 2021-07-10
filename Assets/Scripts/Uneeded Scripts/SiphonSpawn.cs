@@ -5,11 +5,14 @@ using UnityEngine;
 public class SiphonSpawn : MonoBehaviour
 {
 
-    public GameObject AttackObject, MoveButtons;
+    public GameObject AttackObject, MoveButtons, AttackerObject;
     public string attackerName;
 
     public void SiphonAttack()
     {
+
+        AttackObject = this.gameObject;
+        AttackerObject = GameObject.Find("Player 1");
 
         if (GameControllerScript.playerTurn == 1)
         {
@@ -28,8 +31,8 @@ public class SiphonSpawn : MonoBehaviour
 
         }
 
-        Creature self = this.gameObject.GetComponent<Creature>();
-        attackerName = self.name;
+        Creature self = AttackerObject.gameObject.GetComponent<Creature>();
+        attackerName = self.c_name;
         Debug.Log(attackerName + " used Siphon!");
         MoveButtons.SetActive(false);
         GameControllerScript.MoveListButton.SetActive(true);

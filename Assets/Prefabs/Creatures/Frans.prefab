@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5811699109370053827}
   - component: {fileID: 5276256943280260881}
   - component: {fileID: 7921791661617753796}
-  - component: {fileID: 903171608479781861}
   m_Layer: 0
   m_Name: Frans
   m_TagString: Creature
@@ -133,22 +132,6 @@ MonoBehaviour:
     type: 3}
   MoveButtons: {fileID: 0}
   attackerName: Frans
---- !u!114 &903171608479781861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4247951755690325871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21b83f2729621c04681adf45996b3cbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AttackObject: {fileID: 1031835410887470050, guid: 40a554cdd5b356c49a3481ee60010d32,
-    type: 3}
-  MoveButtons: {fileID: 0}
-  attackerName: 
 --- !u!1 &8080251077374471376
 GameObject:
   m_ObjectHideFlags: 0

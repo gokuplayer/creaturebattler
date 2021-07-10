@@ -7,7 +7,7 @@ public class Creature : MonoBehaviour, ICreature
 {
 
     [SerializeField]
-    private string c_name;
+    public string c_name;
     [SerializeField]
     private string type1;
     [SerializeField]

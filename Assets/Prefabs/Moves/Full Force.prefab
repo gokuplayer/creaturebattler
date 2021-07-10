@@ -4709,7 +4709,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7a3745ec4fc412746a08cd8535162cf4, type: 2}
+  - {fileID: 2100000, guid: 1c088072f51194b4d950570a908aeb6b, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -4765,9 +4765,8 @@ GameObject:
   - component: {fileID: 1031835410887470048}
   - component: {fileID: 5282114296961141900}
   - component: {fileID: 3900886575971055532}
-  - component: {fileID: 4987563012491579811}
   m_Layer: 0
-  m_Name: Siphon
+  m_Name: Full Force
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4835,25 +4834,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
---- !u!114 &4987563012491579811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1031835410887470050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 349dcb0157c8f7a4f834d93cabecfb45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AttackSpeed: 1
-  AttackerName: 
-  AttackDirection: {x: 0, y: 0, z: 0}
-  Attacker: {fileID: 0}
-  MoveButtons: {fileID: 0}
-  AttackObject: {fileID: 0}
-  attacker: {fileID: 0}
-  m_name: Siphon
-  m_type: Undead
-  m_uses: 3

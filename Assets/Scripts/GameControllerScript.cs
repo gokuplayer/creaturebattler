@@ -291,13 +291,13 @@ public class GameControllerScript : MonoBehaviour
         Player1 = GameObject.FindWithTag("Player1");
         Creature player1Creature = Player1.GetComponent<Creature>();
         player1maxHealth = player1Creature.health;
-        clone1.name = player1Creature.name + " 1";
+        clone1.name = "Player 1";
         GameObject clone2 = Instantiate(Creatures[player2CreatureChoice], new Vector3(1, 0, 2), Quaternion.identity);
         clone2.transform.tag = "Player2";
         Player2 = GameObject.FindWithTag("Player2");
         Creature player2Creature = Player2.GetComponent<Creature>();
         player2maxHealth = player2Creature.health;
-        clone2.name = player2Creature.name + " 2";
+        clone2.name = "Player 2";
         GameObject moveClone1 = Instantiate(MoveArray[move1], new Vector3(0, 0, 0), Quaternion.identity);
         moveClone1.transform.SetParent(Move1Object.transform, false);
         GameObject moveClone5 = Instantiate(MoveArray[move5], new Vector3(0, 0, 0), Quaternion.identity);
