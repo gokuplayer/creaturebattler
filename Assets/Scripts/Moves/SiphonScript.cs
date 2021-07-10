@@ -232,12 +232,12 @@ public class SiphonScript : MonoBehaviour, IMove
     {
 
         AttackObject = this.gameObject;
-        Attacker = GameObject.Find("Player 1");
 
         if (GameControllerScript.playerTurn == 1)
         {
 
             Instantiate(AttackObject, new Vector3(-0.5f, 0, 2), Quaternion.identity);
+            Attacker = GameObject.Find("Player 1");
             MoveButtons = GameObject.Find("Player1Moves");
             GameControllerScript.playerTurn = 2;
 
@@ -246,6 +246,7 @@ public class SiphonScript : MonoBehaviour, IMove
         {
 
             Instantiate(AttackObject, new Vector3(0.5f, 0, 2), Quaternion.identity);
+            Attacker = GameObject.Find("Player 2");
             MoveButtons = GameObject.Find("Player2Moves");
             GameControllerScript.playerTurn = 1;
 

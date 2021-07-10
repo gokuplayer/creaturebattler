@@ -7,27 +7,35 @@ using UnityEngine.SceneManagement;
 public class GameControllerScript : MonoBehaviour
 {
 
-    public GameObject PlayButton, CreatureAttackerButton, Player1, Player2, Move1Object, Move5Object;
+    public GameObject PlayButton, CreatureAttackerButton, Player1, Player2, Move1Object, Move2Object, Move3Object, Move4Object, Move5Object, 
+        Move6Object, Move7Object, Move8Object;
 
     public GameObject[] Creatures, MoveArray;
 
     public List<string> FransMoves, QuakeMoves;
 
     public static GameObject MoveListButton, Player1MovesObject, Player2MovesObject, ReplayButton, FightButton, 
-        ChooseMovesButton, ChooseMovesNextButton, Move1ChoiceDropdown, PlayerTextObject, PlayerChoiceTextObject, WinnerTextObject, 
-        Player1HealthTextObject, Player2HealthTextObject;
+        ChooseMovesButton, ChooseMovesNextButton, Move1ChoiceDropdown, Move2ChoiceDropdown, Move3ChoiceDropdown, 
+        Move4ChoiceDropdown, PlayerTextObject, PlayerChoiceTextObject, WinnerTextObject, Player1HealthTextObject, 
+        Player2HealthTextObject;
     public static Text PlayerText, PlayerCreatureChoiceText, WinnerText, Player1HealthText, Player2HealthText;
-    public static Dropdown Move1DD;
+    public static Dropdown Move1DD, Move2DD, Move3DD, Move4DD;
     public static int playerTurn;
     public static float player1maxHealth, player2maxHealth;
 
-    private int player1CreatureChoice, player2CreatureChoice, move1, move5;
+    private int player1CreatureChoice, player2CreatureChoice, move1, move2, move3, move4, move5, move6, move7, move8;
 
     void Start()
     {
 
         Move1Object = GameObject.Find("Move1");
+        Move2Object = GameObject.Find("Move2");
+        Move3Object = GameObject.Find("Move3");
+        Move4Object = GameObject.Find("Move4");
         Move5Object = GameObject.Find("Move5");
+        Move6Object = GameObject.Find("Move6");
+        Move7Object = GameObject.Find("Move7");
+        Move8Object = GameObject.Find("Move8");
         MoveListButton = GameObject.Find("MoveListButton");
         Player1MovesObject = GameObject.Find("Player1Moves");
         Player2MovesObject = GameObject.Find("Player2Moves");
@@ -39,6 +47,9 @@ public class GameControllerScript : MonoBehaviour
         PlayerTextObject = GameObject.Find("PlayerText");
         PlayerChoiceTextObject = GameObject.Find("PlayerCreatureChoiceText");
         Move1ChoiceDropdown = GameObject.Find("Move1ChoiceDropdown");
+        Move2ChoiceDropdown = GameObject.Find("Move2ChoiceDropdown");
+        Move3ChoiceDropdown = GameObject.Find("Move3ChoiceDropdown");
+        Move4ChoiceDropdown = GameObject.Find("Move4ChoiceDropdown");
         WinnerTextObject = GameObject.Find("WinnerText");
         Player1HealthTextObject = GameObject.Find("Player1Health");
         Player2HealthTextObject = GameObject.Find("Player2Health");
@@ -48,6 +59,9 @@ public class GameControllerScript : MonoBehaviour
         Player1HealthText = Player1HealthTextObject.GetComponent<Text>();
         Player2HealthText = Player2HealthTextObject.GetComponent<Text>();
         Move1DD = Move1ChoiceDropdown.GetComponent<Dropdown>();
+        Move2DD = Move2ChoiceDropdown.GetComponent<Dropdown>();
+        Move3DD = Move3ChoiceDropdown.GetComponent<Dropdown>();
+        Move4DD = Move4ChoiceDropdown.GetComponent<Dropdown>();
 
         PlayButton.SetActive(true);
         Player1MovesObject.SetActive(false);
@@ -59,6 +73,9 @@ public class GameControllerScript : MonoBehaviour
         ChooseMovesButton.SetActive(false);
         ChooseMovesNextButton.SetActive(false);
         Move1ChoiceDropdown.SetActive(false);
+        Move2ChoiceDropdown.SetActive(false);
+        Move3ChoiceDropdown.SetActive(false);
+        Move4ChoiceDropdown.SetActive(false);
 
         PlayerText.text = "";
         PlayerCreatureChoiceText.text = "";
@@ -67,6 +84,9 @@ public class GameControllerScript : MonoBehaviour
         Player2HealthText.text = "";
 
         Move1DD.options.Clear();
+        Move2DD.options.Clear();
+        Move3DD.options.Clear();
+        Move4DD.options.Clear();
 
     }
 
@@ -153,7 +173,7 @@ public class GameControllerScript : MonoBehaviour
 
     }
 
-    public void MoveDropdownChoice(int choice)
+    public void Move1DropdownChoice(int choice)
     {
 
         if (playerTurn == 2)
@@ -179,6 +199,9 @@ public class GameControllerScript : MonoBehaviour
                     break;
                 case 4:
                     move1 = 4;
+                    break;
+                case 5:
+                    move1 = 5;
                     break;
                 default:
                     Debug.Log("Move choice error");
@@ -210,6 +233,228 @@ public class GameControllerScript : MonoBehaviour
                 case 4:
                     move5 = 4;
                     break;
+                case 5:
+                    move5 = 5;
+                    break;
+                default:
+                    Debug.Log("Move choice error");
+                    break;
+
+            }
+
+        }
+
+    }
+
+    public void Move2DropdownChoice(int choice)
+    {
+
+        if (playerTurn == 2)
+        {
+
+            ChooseMovesNextButton.SetActive(true);
+            Debug.Log(choice);
+
+            switch (choice)
+            {
+
+                case 0:
+                    move2 = 0;
+                    break;
+                case 1:
+                    move2 = 1;
+                    break;
+                case 2:
+                    move2 = 2;
+                    break;
+                case 3:
+                    move2 = 3;
+                    break;
+                case 4:
+                    move2 = 4;
+                    break;
+                case 5:
+                    move2 = 5;
+                    break;
+                default:
+                    Debug.Log("Move choice error");
+                    break;
+
+            }
+
+        }
+        else if (playerTurn == 1)
+        {
+
+            ChooseMovesNextButton.SetActive(false);
+
+            switch (choice)
+            {
+
+                case 0:
+                    move6 = 0;
+                    break;
+                case 1:
+                    move6 = 1;
+                    break;
+                case 2:
+                    move6 = 2;
+                    break;
+                case 3:
+                    move6 = 3;
+                    break;
+                case 4:
+                    move6 = 4;
+                    break;
+                case 5:
+                    move6 = 5;
+                    break;
+                default:
+                    Debug.Log("Move choice error");
+                    break;
+
+            }
+
+        }
+
+    }
+
+    public void Move3DropdownChoice(int choice)
+    {
+
+        if (playerTurn == 2)
+        {
+
+            ChooseMovesNextButton.SetActive(true);
+            Debug.Log(choice);
+
+            switch (choice)
+            {
+
+                case 0:
+                    move3 = 0;
+                    break;
+                case 1:
+                    move3 = 1;
+                    break;
+                case 2:
+                    move3 = 2;
+                    break;
+                case 3:
+                    move3 = 3;
+                    break;
+                case 4:
+                    move3 = 4;
+                    break;
+                case 5:
+                    move3 = 5;
+                    break;
+                default:
+                    Debug.Log("Move choice error");
+                    break;
+
+            }
+
+        }
+        else if (playerTurn == 1)
+        {
+
+            ChooseMovesNextButton.SetActive(false);
+
+            switch (choice)
+            {
+
+                case 0:
+                    move7 = 0;
+                    break;
+                case 1:
+                    move7 = 1;
+                    break;
+                case 2:
+                    move7 = 2;
+                    break;
+                case 3:
+                    move7 = 3;
+                    break;
+                case 4:
+                    move7 = 4;
+                    break;
+                case 5:
+                    move7 = 5;
+                    break;
+                default:
+                    Debug.Log("Move choice error");
+                    break;
+
+            }
+
+        }
+
+    }
+
+    public void Move4DropdownChoice(int choice)
+    {
+
+        if (playerTurn == 2)
+        {
+
+            ChooseMovesNextButton.SetActive(true);
+            Debug.Log(choice);
+
+            switch (choice)
+            {
+
+                case 0:
+                    move4 = 0;
+                    break;
+                case 1:
+                    move4 = 1;
+                    break;
+                case 2:
+                    move4 = 2;
+                    break;
+                case 3:
+                    move4 = 3;
+                    break;
+                case 4:
+                    move4 = 4;
+                    break;
+                case 5:
+                    move4 = 5;
+                    break;
+                default:
+                    Debug.Log("Move choice error");
+                    break;
+
+            }
+
+        }
+        else if (playerTurn == 1)
+        {
+
+            ChooseMovesNextButton.SetActive(false);
+
+            switch (choice)
+            {
+
+                case 0:
+                    move8 = 0;
+                    break;
+                case 1:
+                    move8 = 1;
+                    break;
+                case 2:
+                    move8 = 2;
+                    break;
+                case 3:
+                    move8 = 3;
+                    break;
+                case 4:
+                    move8 = 4;
+                    break;
+                case 5:
+                    move8 = 5;
+                    break;
                 default:
                     Debug.Log("Move choice error");
                     break;
@@ -229,6 +474,9 @@ public class GameControllerScript : MonoBehaviour
             ChooseMovesButton.SetActive(false);
             PlayerCreatureChoiceText.text = "Player 1, choose your moves";
             Move1ChoiceDropdown.SetActive(true);
+            Move2ChoiceDropdown.SetActive(true);
+            Move3ChoiceDropdown.SetActive(true);
+            Move4ChoiceDropdown.SetActive(true);
             playerTurn = 2;
 
             switch (player1CreatureChoice)
@@ -239,6 +487,9 @@ public class GameControllerScript : MonoBehaviour
                     {
 
                         Move1DD.options.Add(new Dropdown.OptionData(option));
+                        Move2DD.options.Add(new Dropdown.OptionData(option));
+                        Move3DD.options.Add(new Dropdown.OptionData(option));
+                        Move4DD.options.Add(new Dropdown.OptionData(option));
 
                     }
                     break;
@@ -247,6 +498,9 @@ public class GameControllerScript : MonoBehaviour
                     {
 
                         Move1DD.options.Add(new Dropdown.OptionData(option));
+                        Move2DD.options.Add(new Dropdown.OptionData(option));
+                        Move3DD.options.Add(new Dropdown.OptionData(option));
+                        Move4DD.options.Add(new Dropdown.OptionData(option));
 
                     }
                     break;
@@ -284,6 +538,9 @@ public class GameControllerScript : MonoBehaviour
 
         FightButton.SetActive(false);
         Move1ChoiceDropdown.SetActive(false);
+        Move2ChoiceDropdown.SetActive(false);
+        Move3ChoiceDropdown.SetActive(false);
+        Move4ChoiceDropdown.SetActive(false);
         PlayerCreatureChoiceText.text = "";
         MoveListButton.SetActive(true);
         GameObject clone1 = Instantiate(Creatures[player1CreatureChoice], new Vector3(-1, 0, 2), Quaternion.identity);
@@ -300,8 +557,20 @@ public class GameControllerScript : MonoBehaviour
         clone2.name = "Player 2";
         GameObject moveClone1 = Instantiate(MoveArray[move1], new Vector3(0, 0, 0), Quaternion.identity);
         moveClone1.transform.SetParent(Move1Object.transform, false);
+        GameObject moveClone2 = Instantiate(MoveArray[move2], new Vector3(0, 0, 0), Quaternion.identity);
+        moveClone2.transform.SetParent(Move2Object.transform, false);
+        GameObject moveClone3 = Instantiate(MoveArray[move3], new Vector3(0, 0, 0), Quaternion.identity);
+        moveClone3.transform.SetParent(Move3Object.transform, false);
+        GameObject moveClone4 = Instantiate(MoveArray[move4], new Vector3(0, 0, 0), Quaternion.identity);
+        moveClone4.transform.SetParent(Move4Object.transform, false);
         GameObject moveClone5 = Instantiate(MoveArray[move5], new Vector3(0, 0, 0), Quaternion.identity);
         moveClone5.transform.SetParent(Move5Object.transform, false);
+        GameObject moveClone6 = Instantiate(MoveArray[move6], new Vector3(0, 0, 0), Quaternion.identity);
+        moveClone6.transform.SetParent(Move6Object.transform, false);
+        GameObject moveClone7 = Instantiate(MoveArray[move7], new Vector3(0, 0, 0), Quaternion.identity);
+        moveClone7.transform.SetParent(Move7Object.transform, false);
+        GameObject moveClone8 = Instantiate(MoveArray[move8], new Vector3(0, 0, 0), Quaternion.identity);
+        moveClone8.transform.SetParent(Move8Object.transform, false);
 
     }
 

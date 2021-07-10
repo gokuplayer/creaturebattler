@@ -197,7 +197,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5276256943280260881, guid: 0d36629eb66509f41820392335a20bfb,
+      - m_Target: {fileID: 1734729559508572256, guid: b532366a6f04d074fb8d0c788b52e906,
           type: 3}
         m_MethodName: ShadowBladeAttack
         m_Mode: 1

@@ -119,7 +119,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5811699109370053827, guid: 0d36629eb66509f41820392335a20bfb,
+      - m_Target: {fileID: 2333062951779979895, guid: 329427b2bf0a35849b0e14a92261586e,
           type: 3}
         m_MethodName: DrainingStrikeAttack
         m_Mode: 1

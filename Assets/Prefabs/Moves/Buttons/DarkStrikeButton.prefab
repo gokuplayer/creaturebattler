@@ -197,7 +197,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7921791661617753796, guid: 0d36629eb66509f41820392335a20bfb,
+      - m_Target: {fileID: 5882697807066126558, guid: fb31eeabf23054c4fb7a01f48183cd67,
           type: 3}
         m_MethodName: DarkStrikeAttack
         m_Mode: 1

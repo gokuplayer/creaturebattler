@@ -197,7 +197,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -2273178858450549179, guid: e5c4cbda7ae773e42ba873c5447debac,
+      - m_Target: {fileID: 6538003792720414404, guid: 9f796261b99d94244b063f268a7a1536,
           type: 3}
         m_MethodName: SmashAttack
         m_Mode: 1

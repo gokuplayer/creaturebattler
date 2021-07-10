@@ -6,8 +6,9 @@ public class ShadowBladeScript : MonoBehaviour, IMove
 {
 
     public int AttackSpeed = 1;
+    public string AttackerName;
     public Vector3 AttackDirection;
-    public GameObject Attacker;
+    public GameObject Attacker, MoveButtons, AttackObject;
     public Creature attacker;
 
     private int attackPower;
@@ -157,6 +158,38 @@ public class ShadowBladeScript : MonoBehaviour, IMove
             }
 
         }
+
+    }
+
+    public void ShadowBladeAttack()
+    {
+
+        AttackObject = this.gameObject;
+
+        if (GameControllerScript.playerTurn == 1)
+        {
+
+            Instantiate(AttackObject, new Vector3(-0.5f, 0, 2), Quaternion.identity);
+            Attacker = GameObject.Find("Player 1");
+            MoveButtons = GameObject.Find("Player1Moves");
+            GameControllerScript.playerTurn = 2;
+
+        }
+        else if (GameControllerScript.playerTurn == 2)
+        {
+
+            Instantiate(AttackObject, new Vector3(0.5f, 0, 2), Quaternion.identity);
+            Attacker = GameObject.Find("Player 2");
+            MoveButtons = GameObject.Find("Player2Moves");
+            GameControllerScript.playerTurn = 1;
+
+        }
+
+        Creature self = Attacker.gameObject.GetComponent<Creature>();
+        AttackerName = self.c_name;
+        Debug.Log(AttackerName + " used Shadow Blade!");
+        MoveButtons.SetActive(false);
+        GameControllerScript.MoveListButton.SetActive(true);
 
     }
 
