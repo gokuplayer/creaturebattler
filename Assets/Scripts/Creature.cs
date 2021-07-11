@@ -19,9 +19,9 @@ public class Creature : MonoBehaviour, ICreature
     [SerializeField]
     public float physDef;
     [SerializeField]
-    private float ranged;
+    public float ranged;
     [SerializeField]
-    private float ranDef;
+    public float ranDef;
     [SerializeField]
     private float speed;
     [SerializeField]
