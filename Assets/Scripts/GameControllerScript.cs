@@ -203,6 +203,9 @@ public class GameControllerScript : MonoBehaviour
                 case 5:
                     move1 = 5;
                     break;
+                case 6:
+                    move1 = 6;
+                    break;
                 default:
                     Debug.Log("Move choice error");
                     break;
@@ -235,6 +238,9 @@ public class GameControllerScript : MonoBehaviour
                     break;
                 case 5:
                     move5 = 5;
+                    break;
+                case 6:
+                    move5 = 6;
                     break;
                 default:
                     Debug.Log("Move choice error");
@@ -276,6 +282,9 @@ public class GameControllerScript : MonoBehaviour
                 case 5:
                     move2 = 5;
                     break;
+                case 6:
+                    move2 = 6;
+                    break;
                 default:
                     Debug.Log("Move choice error");
                     break;
@@ -308,6 +317,9 @@ public class GameControllerScript : MonoBehaviour
                     break;
                 case 5:
                     move6 = 5;
+                    break;
+                case 6:
+                    move6 = 6;
                     break;
                 default:
                     Debug.Log("Move choice error");
@@ -349,6 +361,9 @@ public class GameControllerScript : MonoBehaviour
                 case 5:
                     move3 = 5;
                     break;
+                case 6:
+                    move3 = 6;
+                    break;
                 default:
                     Debug.Log("Move choice error");
                     break;
@@ -381,6 +396,9 @@ public class GameControllerScript : MonoBehaviour
                     break;
                 case 5:
                     move7 = 5;
+                    break;
+                case 6:
+                    move7 = 6;
                     break;
                 default:
                     Debug.Log("Move choice error");
@@ -422,6 +440,9 @@ public class GameControllerScript : MonoBehaviour
                 case 5:
                     move4 = 5;
                     break;
+                case 6:
+                    move4 = 6;
+                    break;
                 default:
                     Debug.Log("Move choice error");
                     break;
@@ -454,6 +475,9 @@ public class GameControllerScript : MonoBehaviour
                     break;
                 case 5:
                     move8 = 5;
+                    break;
+                case 6:
+                    move8 = 6;
                     break;
                 default:
                     Debug.Log("Move choice error");
