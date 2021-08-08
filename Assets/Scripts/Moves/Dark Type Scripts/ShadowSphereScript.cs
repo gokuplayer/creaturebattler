@@ -46,13 +46,13 @@ public class ShadowSphereScript : MonoBehaviour, IMove
     public void Start()
     {
 
-        if (GameControllerScript.playerTurn == 1)
+        if (GameControllerScript.playerTurn == 2)
         {
 
             Attacker = GameObject.FindWithTag("Player1");
 
         }
-        else if (GameControllerScript.playerTurn == 2)
+        else if (GameControllerScript.playerTurn == 1)
         {
 
             Attacker = GameObject.FindWithTag("Player2");
@@ -98,10 +98,21 @@ public class ShadowSphereScript : MonoBehaviour, IMove
                 Creature enemy = other.gameObject.GetComponent<Creature>();
                 damage = totalPower - enemy.ranDef;
 
-                if (m_type == attacker.Type1 || m_type == attacker.Type2)
+                if (m_type == attacker.type1 || m_type == attacker.type2)
                 {
 
-                    damage = damage * 1.5f;
+                    damage *= 1.5f;
+
+                    Debug.Log("STAB damage!");
+
+                }
+
+                if (TypeChartScript.strengthDict[m_type].Contains(enemy.type1))
+                {
+
+                    damage *= 2f;
+
+                    Debug.Log("It's Super Effective!");
 
                 }
 

@@ -9,9 +9,9 @@ public class Creature : MonoBehaviour, ICreature
     [SerializeField]
     public string c_name;
     [SerializeField]
-    private string type1;
+    public string type1;
     [SerializeField]
-    private string type2;
+    public string type2;
     [SerializeField]
     public float health;
     [SerializeField]
@@ -23,9 +23,9 @@ public class Creature : MonoBehaviour, ICreature
     [SerializeField]
     public float ranDef;
     [SerializeField]
-    private float speed;
+    public float speed;
     [SerializeField]
-    private float movement;
+    public float movement;
 
     public Creature(string name, string type1, string type2, float health, float physical, float physDef, float ranged, float ranDef, float speed, float movement)
     {
