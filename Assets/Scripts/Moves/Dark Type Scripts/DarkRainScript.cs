@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DarkRainScript : MonoBehaviour
+public class DarkRainScript : MonoBehaviour, IMove
 {
 
     public int AttackSpeed = 1;

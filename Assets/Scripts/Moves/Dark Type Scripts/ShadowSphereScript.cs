@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShadowSphereScript : MonoBehaviour
+public class ShadowSphereScript : MonoBehaviour, IMove
 {
 
     public int AttackSpeed = 1;

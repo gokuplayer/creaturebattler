@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FullForceScript : MonoBehaviour
+public class GaleForceScript : MonoBehaviour, IMove
 {
 
     public int AttackSpeed = 1;
@@ -62,7 +62,7 @@ public class FullForceScript : MonoBehaviour
         attacker = Attacker.gameObject.GetComponent<Creature>();
         attackPower = Random.Range(40, 60);
         accuracy = Random.Range(0, 100);
-        totalPower = attackPower + attacker.physical;
+        totalPower = attackPower + attacker.ranged;
 
     }
 
@@ -96,7 +96,7 @@ public class FullForceScript : MonoBehaviour
             {
 
                 Creature enemy = other.gameObject.GetComponent<Creature>();
-                damage = totalPower - enemy.physDef;
+                damage = totalPower - enemy.ranDef;
 
                 if (m_type == attacker.Type1 || m_type == attacker.Type2)
                 {
@@ -161,7 +161,7 @@ public class FullForceScript : MonoBehaviour
 
     }
 
-    public void FullForceAttack()
+    public void GaleForceAttack()
     {
 
         AttackObject = this.gameObject;
@@ -187,7 +187,7 @@ public class FullForceScript : MonoBehaviour
 
         Creature self = Attacker.gameObject.GetComponent<Creature>();
         AttackerName = self.c_name;
-        Debug.Log(AttackerName + " used Full Force!");
+        Debug.Log(AttackerName + " used Gale Force!");
         MoveButtons.SetActive(false);
         GameControllerScript.MoveListButton.SetActive(true);
 

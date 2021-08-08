@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RockBlastScript : MonoBehaviour
+public class RockBlastScript : MonoBehaviour, IMove
 {
 
     public int AttackSpeed = 1;

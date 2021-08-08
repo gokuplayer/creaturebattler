@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SmashScript : MonoBehaviour
+public class SmashScript : MonoBehaviour, IMove
 {
 
     public int AttackSpeed = 1;

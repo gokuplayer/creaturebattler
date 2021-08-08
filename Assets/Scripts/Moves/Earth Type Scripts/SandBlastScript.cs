@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SandBlastScript : MonoBehaviour
+public class SandBlastScript : MonoBehaviour, IMove
 {
 
     public int AttackSpeed = 1;

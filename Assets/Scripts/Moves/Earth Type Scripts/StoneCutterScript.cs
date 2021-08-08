@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoneCutterScript : MonoBehaviour
+public class StoneCutterScript : MonoBehaviour, IMove
 {
 
     public int AttackSpeed = 1;

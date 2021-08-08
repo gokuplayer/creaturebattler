@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DarkRayScript : MonoBehaviour
+public class DarkRayScript : MonoBehaviour, IMove
 {
 
     public int AttackSpeed = 1;

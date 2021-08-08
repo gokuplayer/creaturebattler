@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RockCrusherScript : MonoBehaviour
+public class RockCrusherScript : MonoBehaviour, IMove
 {
 
     public int AttackSpeed = 1;
